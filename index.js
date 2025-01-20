@@ -70,6 +70,53 @@ search.addEventListener('click', () => {
     });
 });
 
-document.getElementById('reload-button').addEventListener('click', function() {
-    location.reload();
+document.getElementById('search-button').addEventListener('click', function() {
+    const location = document.getElementById('location-input').value;
+    if (location) {
+        // Simulate fetching weather data
+        fetchWeatherData(location);
+    }
 });
+
+document.getElementById('reload-button').addEventListener('click', function() {
+    const weatherBox = document.getElementById('weather-box');
+    const weatherDetails = document.getElementById('weather-details');
+    const container = document.querySelector('.container');
+
+    weatherBox.classList.remove('fadeIn');
+    weatherDetails.classList.remove('fadeIn');
+    weatherBox.classList.add('fadeOut');
+    weatherDetails.classList.add('fadeOut');
+
+    setTimeout(() => {
+        location.reload();
+    }, 1000); // Wait for the fadeOut animation to complete
+});
+
+function fetchWeatherData(location) {
+    // Simulate an API call
+    const isValidLocation = Math.random() > 0.5; // Randomly decide if the location is valid
+
+    if (isValidLocation) {
+        document.getElementById('not-found').style.display = 'none';
+        const weatherBox = document.getElementById('weather-box');
+        const weatherDetails = document.getElementById('weather-details');
+        const container = document.querySelector('.container');
+
+        // Update weather information
+        document.getElementById('weather-icon').src = 'images/weather-icon.png';
+        document.getElementById('temperature').textContent = '25°C';
+        document.getElementById('description').textContent = 'Sunny';
+        document.getElementById('humidity').textContent = 'Humidity: 60%';
+
+        weatherBox.style.display = '';
+        weatherDetails.style.display = '';
+        weatherBox.classList.add('fadeIn');
+        weatherDetails.classList.add('fadeIn');
+        container.style.height = '590px';
+    } else {
+        document.getElementById('not-found').style.display = 'block';
+        document.getElementById('weather-box').style.display = 'none';
+        document.getElementById('weather-details').style.display = 'none';
+    }
+}
