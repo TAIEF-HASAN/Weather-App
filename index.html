@@ -61,7 +61,7 @@
             const input = document.querySelector('.search-box input');
             const suggestions = document.createElement('div');
             suggestions.classList.add('suggestions');
-            document.querySelector('.container').appendChild(suggestions);
+            document.querySelector('.search-box').appendChild(suggestions);
 
             input.addEventListener('input', function() {
                 const query = input.value;
