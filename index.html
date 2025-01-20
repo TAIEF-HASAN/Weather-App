@@ -61,7 +61,7 @@
             const input = document.querySelector('.search-box input');
             const suggestions = document.createElement('div');
             suggestions.classList.add('suggestions');
-            document.querySelector('.search-box').appendChild(suggestions);
+            document.querySelector('.container').appendChild(suggestions);
 
             input.addEventListener('input', function() {
                 const query = input.value;
@@ -97,7 +97,7 @@
             position: absolute;
             background: white;
             border: 1px solid #ccc;
-            width: calc(100% - 40px);
+            width: calc(100% - 20px);
             max-height: 200px;
             overflow-y: auto;
             z-index: 1000;
