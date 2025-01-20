@@ -6,13 +6,13 @@ const error404 = document.querySelector('.not-found');
 
 search.addEventListener('click', () => {
 
-    const APIKey = '635b5cf7a522c63b5b57e2e846c9e8b9';
+    const APIKey = 'pk.3c5e64489d3bb184299339b68dcb8da3';
     const city = document.querySelector('.search-box input').value;
 
     if (city === '')
     return;
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
+    fetch(`https://api.locationiq.com/v1/autocomplete.php?key=pk.3c5e64489d3bb184299339b68dcb8da3&q=${query}`)
     .then(response => response.json())
     .then(json => {
 
