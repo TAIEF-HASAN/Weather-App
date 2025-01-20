@@ -54,16 +54,16 @@
         <button id="reload-button" style="font-size: 16px; padding: 45px 90px; background-color: orange; border-radius: 20px; margin-top: -20px; margin-left: 20px;">
             <i class="fa-solid fa-rotate-right"></i> Reload
         </button>
-        <script>
-            document.getElementById('reload-button').addEventListener('click', function() {
-            document.body.style.transition = 'opacity 0.5s';
-            document.body.style.opacity = '0';
-            setTimeout(function() {
-                location.reload();
-            }, 500);
-            });
-        </script>
     </div>
+    <script>
+        document.getElementById('reload-button').addEventListener('click', function() {
+        document.body.style.transition = 'opacity 0.5s';
+        document.body.style.opacity = '0';
+        setTimeout(function() {
+            location.reload();
+        }, 500);
+        });
+    </script>
 
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
