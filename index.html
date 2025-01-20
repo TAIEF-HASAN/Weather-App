@@ -56,6 +56,13 @@
         </button>
     </div>
 
+    <script>
+        document.getElementById('reload-button').addEventListener('click', function() {
+            document.querySelector('.search-box input').value = '';
+            location.reload();
+        });
+    </script>
+
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
