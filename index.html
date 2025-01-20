@@ -66,7 +66,7 @@
             input.addEventListener('input', function() {
                 const query = input.value;
                 if (query.length > 2) {
-                    fetch(`https://api.locationiq.com/v1/autocomplete.php?key=YOUR_API_KEY&q=${query}`)
+                    fetch(`https://api.locationiq.com/v1/autocomplete.php?key=pk.3c5e64489d3bb184299339b68dcb8da3&q=${query}`)
                         .then(response => response.json())
                         .then(data => {
                             suggestions.innerHTML = '';
