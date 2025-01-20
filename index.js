@@ -74,3 +74,14 @@ document.getElementById('reload-button').addEventListener('click', function() {
     location.reload();
 });
 
+ document.getElementById('reload-button').addEventListener('click', function() {
+            document.body.style.transition = 'opacity 2s';
+            document.body.style.opacity = '0';
+            setTimeout(function() {
+                location.reload();
+            }, 500);
+        });
+
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
