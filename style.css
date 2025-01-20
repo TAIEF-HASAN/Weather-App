@@ -203,9 +203,62 @@ body{
     margin-right: 5px;
 }
 
+.fadeOut {
+    animation: fadeOut 1s forwards;
+}
+
+.scale-0 {
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+
+.not-found img {
+    width: 70%;
+}
+
+.not-found p {
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.weather-box, .weather-details {
+    scale: 0;
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+.reload-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.reload-button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
 @keyframes fadeIn{
     to{
         scale: 1;
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
