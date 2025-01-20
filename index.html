@@ -56,6 +56,24 @@
         </button>
     </div>
 
+    <style>
+        .suggestions {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            width: calc(100% - 20px);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background: #f0f0f0;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.querySelector('.search-box input');
@@ -92,24 +110,6 @@
             });
         });
     </script>
-    <style>
-        .suggestions {
-            position: absolute;
-            background: white;
-            border: 1px solid #ccc;
-            width: calc(100% - 20px);
-            max-height: 200px;
-            overflow-y: auto;
-            z-index: 1000;
-        }
-        .suggestion-item {
-            padding: 10px;
-            cursor: pointer;
-        }
-        .suggestion-item:hover {
-            background: #f0f0f0;
-        }
-    </style>
 
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
