@@ -99,3 +99,17 @@ reloadButton.addEventListener('click', () => {
     }, 1000); // Wait for the fadeOut animation to complete
 });
 
+document.getElementById('reload-button').addEventListener('click', function() {
+    document.body.style.transition = 'opacity 2s';
+            document.body.style.opacity = '0';
+            setTimeout(function() {
+                location.reload();
+            }, 500);
+    document.querySelector('.search-box input').value = '';
+    location.reload();
+});
+
+
+window.addEventListener('load', function() {
+    document.body.style.opacity = '1';
+});
