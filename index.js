@@ -69,36 +69,3 @@ search.addEventListener('click', () => {
     
     });
 });
-
-document.getElementById('search-button').addEventListener('click', function() {
-    const location = document.getElementById('location-input').value;
-    if (location) {
-        // Simulate fetching weather data
-        fetchWeatherData(location);
-    }
-});
-
-document.getElementById('reload-button').addEventListener('click', function() {
-    location.reload();
-});
-
-function fetchWeatherData(location) {
-    // Simulate an API call
-    const isValidLocation = Math.random() > 0.5; // Randomly decide if the location is valid
-
-    if (isValidLocation) {
-        document.getElementById('not-found').style.display = 'none';
-        document.getElementById('weather-box').style.display = 'block';
-        document.getElementById('weather-details').style.display = 'block';
-
-        // Update weather information
-        document.getElementById('weather-icon').src = 'images/weather-icon.png';
-        document.getElementById('temperature').textContent = '25°C';
-        document.getElementById('description').textContent = 'Sunny';
-        document.getElementById('humidity').textContent = 'Humidity: 60%';
-    } else {
-        document.getElementById('not-found').style.display = 'block';
-        document.getElementById('weather-box').style.display = 'none';
-        document.getElementById('weather-details').style.display = 'none';
-    }
-}
