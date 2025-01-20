@@ -12,7 +12,7 @@ search.addEventListener('click', () => {
     if (city === '')
     return;
 
-    fetch(`https://api.locationiq.com/v1/autocomplete.php?key=YOUR_ACTUAL_API_KEY&q=${query}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
     .then(response => response.json())
     .then(json => {
 
