@@ -55,62 +55,6 @@
             <i class="fas fa-rotate-right"></i> Reload
         </button>
     </div>
-    
-        <style>
-            .suggestions {
-                position: absolute;
-                background: white;
-                border: 1px solid #ccc;
-                width: calc(100% - 20px);
-                max-height: 200px;
-                overflow-y: auto;
-                z-index: 1000;
-            }
-            .suggestion-item {
-                padding: 10px;
-                cursor: pointer;
-            }
-            .suggestion-item:hover {
-                background: #f0f0f0;
-            }
-        </style>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const input = document.querySelector('.search-box input');
-                const suggestions = document.createElement('div');
-                suggestions.classList.add('suggestions');
-                document.querySelector('.container').appendChild(suggestions);
-    
-                input.addEventListener('input', function() {
-                    const query = input.value;
-                    const inputRect = input.getBoundingClientRect();
-                    suggestions.style.top = `${inputRect.bottom + window.scrollY}px`;
-                    suggestions.style.left = `${inputRect.left + window.scrollX}px`;
-                    suggestions.style.width = `${inputRect.width}px`;
-    
-                    if (query.length > 2) {
-                        fetch(`https://api.locationiq.com/v1/autocomplete.php?key=pk.3c5e64489d3bb184299339b68dcb8da3&q=${query}` )
-                            .then(response => response.json())
-                            .then(data => {
-                                suggestions.innerHTML = '';
-                                data.forEach(location => {
-                                    const suggestionItem = document.createElement('div');
-                                    suggestionItem.classList.add('suggestion-item');
-                                    suggestionItem.textContent = location.display_name;
-                                    suggestionItem.addEventListener('click', function() {
-                                        input.value = location.display_name;
-                                        suggestions.innerHTML = '';
-                                    });
-                                    suggestions.appendChild(suggestionItem);
-                                });
-                            });
-                    } else {
-                        suggestions.innerHTML = '';
-                    }
-                });
-            });
-        </script>
-    </head>
 
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
