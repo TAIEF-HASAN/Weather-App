@@ -71,17 +71,16 @@ search.addEventListener('click', () => {
 });
 
 document.getElementById('reload-button').addEventListener('click', function() {
-    location.reload();
-});
-
- document.getElementById('reload-button').addEventListener('click', function() {
-            document.body.style.transition = 'opacity 2s';
+    document.body.style.transition = 'opacity 2s';
             document.body.style.opacity = '0';
             setTimeout(function() {
                 location.reload();
             }, 500);
-        });
+    document.querySelector('.search-box input').value = '';
+    location.reload();
+});
 
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '1';
-        });
+
+window.addEventListener('load', function() {
+    document.body.style.opacity = '1';
+});
