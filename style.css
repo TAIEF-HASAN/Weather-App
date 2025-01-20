@@ -14,6 +14,37 @@ body{
     background: #06283D;
 }
 
+.reload-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: #dff6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+}
+
+.reload-button:hover {
+    background: #06283D;
+    color: #fff;
+}
+
+.reload-button i {
+    color: #06283D;
+    font-size: 20px;
+    transition: 0.4s ease;
+}
+
+.reload-button:hover i {
+    color: #fff;
+}
+
+
 .container{
     position: relative;
     width: 400px;
