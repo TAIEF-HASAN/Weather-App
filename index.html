@@ -57,11 +57,16 @@
     </div>
     <script>
         document.getElementById('reload-button').addEventListener('click', function() {
-        document.body.style.transition = 'opacity 0.5s';
-        document.body.style.opacity = '0';
-        setTimeout(function() {
-            location.reload();
-        }, 500);
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '0';
+            setTimeout(function() {
+                location.reload();
+            }, 500);
+        });
+
+        window.addEventListener('load', function() {
+            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.opacity = '1';
         });
     </script>
 
