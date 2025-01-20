@@ -55,19 +55,6 @@
             <i class="fas fa-rotate-right"></i> Reload
         </button>
     </div>
-    <script>
-        document.getElementById('reload-button').addEventListener('click', function() {
-            document.body.style.transition = 'opacity 2s';
-            document.body.style.opacity = '0';
-            setTimeout(function() {
-                location.reload();
-            }, 500);
-        });
-
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '1';
-        });
-    </script>
 
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
