@@ -70,6 +70,10 @@ search.addEventListener('click', () => {
     });
 });
 
+document.getElementById('reload-button').addEventListener('click', function() {
+    location.reload();
+});
+
 document.getElementById('search-button').addEventListener('click', function() {
     const location = document.getElementById('location-input').value;
     if (location) {
