@@ -61,10 +61,15 @@
             const input = document.querySelector('.search-box input');
             const suggestions = document.createElement('div');
             suggestions.classList.add('suggestions');
-            document.querySelector('.search-box').appendChild(suggestions);
+            document.querySelector('.container').appendChild(suggestions);
 
             input.addEventListener('input', function() {
                 const query = input.value;
+                const inputRect = input.getBoundingClientRect();
+                suggestions.style.top = `${inputRect.bottom + window.scrollY}px`;
+                suggestions.style.left = `${inputRect.left + window.scrollX}px`;
+                suggestions.style.width = `${inputRect.width}px`;
+
                 if (query.length > 2) {
                     fetch(`https://api.locationiq.com/v1/autocomplete.php?key=pk.3c5e64489d3bb184299339b68dcb8da3&q=${query}`)
                         .then(response => response.json())
