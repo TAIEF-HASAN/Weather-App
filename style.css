@@ -12,6 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     background: #06283D;
+    opacity: 1;
 }
 
 .container{
