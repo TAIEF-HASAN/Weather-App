@@ -69,7 +69,3 @@ search.addEventListener('click', () => {
     
     });
 });
-
-document.getElementById('reload-button').addEventListener('click', function() {
-    location.reload();
-});
