@@ -174,12 +174,11 @@ body{
 }
 
 .fadeIn{
-    animation: 0.5s fadeIn forwards;
-    animation-delay: 0.5s;
+    animation: fadeIn 0.5s forwards;
 }
 
 .fadeOut {
-    animation: 1s fadeOut forwards;
+    animation: fadeOut 1s forwards;
 }
 
 .reload-button {
@@ -208,8 +207,10 @@ body{
 }
 
 @keyframes fadeIn{
-    to{
-        scale: 1;
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
 }
