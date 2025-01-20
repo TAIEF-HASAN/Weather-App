@@ -18,8 +18,8 @@
     <div class="container">
         <div class="search-box">
             <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Enter your location">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" placeholder="Enter your location">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
 
         <div class="not-found">
@@ -35,16 +35,23 @@
 
         <div class="weather-details">
             <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind Speed</p>
+                </div>
             </div>
         </div>
-
-        <button id="reload-button">Reload</button>
     </div>
 
-    <script>
-        document.getElementById('reload-button').addEventListener('click', function() {
-            location.reload();
-        });
-    </script>
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
