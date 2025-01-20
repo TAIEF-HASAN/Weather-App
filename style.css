@@ -178,6 +178,31 @@ body{
     animation-delay: 0.5s;
 }
 
+.reload-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.reload-button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.reload-button button:hover {
+    background-color: #45a049;
+}
+
+.reload-button button i {
+    margin-right: 5px;
+}
+
 @keyframes fadeIn{
     to{
         scale: 1;
