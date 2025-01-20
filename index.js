@@ -25,10 +25,9 @@ locationInput.addEventListener('input', () => {
 search.addEventListener('click', () => {
 
     const APIKey = '635b5cf7a522c63b5b57e2e846c9e8b9';
-    const city = document.querySelector('.search-box input').value;
+    const city = locationInput.value;
 
-    if (city === '')
-    return;
+    if (city === '') return;
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
     .then(response => response.json())
