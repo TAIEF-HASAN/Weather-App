@@ -3,6 +3,24 @@ const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
+const reloadButton = document.getElementById('reload-button');
+
+// Initialize Google Places Autocomplete
+const locationInput = document.getElementById('location-input');
+let autocomplete;
+
+locationInput.addEventListener('input', () => {
+    if (locationInput.value.length >= 3) {
+        if (!autocomplete) {
+            autocomplete = new google.maps.places.Autocomplete(locationInput);
+        }
+    } else {
+        if (autocomplete) {
+            google.maps.event.clearInstanceListeners(locationInput);
+            autocomplete = null;
+        }
+    }
+});
 
 search.addEventListener('click', () => {
 
@@ -68,6 +86,17 @@ search.addEventListener('click', () => {
         
     
     });
+});
+
+reloadButton.addEventListener('click', () => {
+    weatherBox.classList.remove('fadeIn');
+    weatherDetails.classList.remove('fadeIn');
+    weatherBox.classList.add('fadeOut');
+    weatherDetails.classList.add('fadeOut');
+
+    setTimeout(() => {
+        location.reload();
+    }, 1000); // Wait for the fadeOut animation to complete
 });
 
 document.getElementById('reload-button').addEventListener('click', function() {
