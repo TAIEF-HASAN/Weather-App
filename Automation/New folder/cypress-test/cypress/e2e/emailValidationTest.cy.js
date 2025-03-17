@@ -1,5 +1,9 @@
 describe('Email Validation Test', () => {
     beforeEach(() => {
+        cy.on('uncaught:exception', (err, runnable) => {
+            return false; // Ignore Angular-related errors
+        });
+
         cy.visit('https://demo.automationtesting.in/Register.html'); // Open the form
     });
 
